@@ -27,6 +27,7 @@ numbers_count = 0
 
 # get user input for a string
 String = input("Enter a string: ")
+
 # turn the string to uppercase and lowercase
 String_upper = String.upper() # formats the string
 String_lower = String.lower()
@@ -44,7 +45,6 @@ for i in range(len(String)):
         vowel_count += 1
 
 # count the consonants in the string
-
 consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
 
 for i in range(len(String)):
@@ -52,7 +52,6 @@ for i in range(len(String)):
         consonants_count += 1
 
 # count the numbers in the string
-
 numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 for i in range(len(String)):
@@ -60,16 +59,15 @@ for i in range(len(String)):
         numbers_count += 1
 
 # count the other characters in the string
-
 other_characters_count = len(String) - (vowel_count + consonants_count + space_count + numbers_count)
 
-# print the string forwards and backwards
-print('''String forwards: + String
-String backwards: + String[::-1]
-String in uppercase: + String_upper
-String in lowercase: + String_lower
-Number of vowels: + vowel_count    
-Number of spaces: + space_count 
-Number of consonants: + consonants_count
-Number of numbers: + numbers_count
-Number of other characters: + other_characters_count''')
+# print the string in all formats
+print(f"String forwards: {String}\n"
+      f"String backwards: {String[::-1]}\n"
+      f"String in uppercase: {String_upper}\n"
+      f"String in lowercase: {String_lower}\n"
+      f"Number of vowels: {vowel_count}\n"
+      f"Number of spaces: {space_count}\n"
+      f"Number of consonants: {consonants_count}\n"
+      f"Number of numbers: {numbers_count}\n"
+      f"Number of other characters: {other_characters_count}")

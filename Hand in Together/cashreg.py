@@ -1,7 +1,7 @@
 #######################################################
-# JANREI
+# JANREI & AARON
 # Computer Science 30
-# sept. 16, 2024
+# sept. 24, 2024
 #
 #Write a "cash register" program. Have the user input the price of a product, and the quantity of
 #that product. Display a running total at all times. When the user enters a price of zero, that will
@@ -26,6 +26,8 @@ tax = int(input("Enter the tax rate (in percentage): "))
 
 sub_total = 0 # initialize subtotal to 0
 
+# actually buying stuff ↓
+
 print("Menu:")  # display menu items and their prices in the terminal
 for i, (item, price) in enumerate(zip(items, prices), start=1): # display menu
     print(f"{i}. {item} - ${price}") # display prices in the terminal
@@ -48,6 +50,8 @@ while True: # loop until user enters a price of 0
             print(f"{i}. {item} - ${price}") # display prices in the terminal
         print(f'Your total so far is ${sub_total}')
 
+# displaying what you bought and the total ↓
+
 print("Items and their quantities:")  # display items and their quantities
 for i, (item, price, quantity) in enumerate(zip(items, prices, quantities), start=1):
     print(f"Item: {item}, Price: ${price}, Quantity: {quantity}")
@@ -57,6 +61,8 @@ total = sub_total + taxes # calculate total with tax
 
 print(f'Your taxes are ${taxes}')
 print(f'Your total is ${total}')
+
+# everything that has to do with payment ↓
 
 cash_tendered = float(input("Enter the amount of cash tendered: "))
 

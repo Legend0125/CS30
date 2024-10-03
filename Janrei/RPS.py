@@ -36,18 +36,19 @@ def get_user_choice(): # user enters rock paper or scissors
         except ValueError:
             print("Invalid choice. Please enter 1 for rock, 2 for paper, or 3 for scissors.")
 
-def get_bot_choice(): # bot randomly chooses rock paper or scissors
+def get_bot_choice(): # bot randomly chooses rock paper or scissorsdef get_bot_choice(): # bot randomly chooses rock paper or scissors
     return random.randint(ROCK, SCISSORS)
 
 def determine_winner(user_choice, bot_choice): # compare user and bot choices and determine winner
     if user_choice == bot_choice:
         return "It's a tie!"
-    elif (user_choice == ROCK and bot_choice == SCISSORS) or \ 
+    elif (user_choice == ROCK and bot_choice == SCISSORS) or \
          (user_choice == PAPER and bot_choice == ROCK) or \
-         (user_choice == SCISSORS and bot_choice == PAPER): #all cases where user wins
+         (user_choice == SCISSORS and bot_choice == PAPER): # all cases where user wins
         return "You win!"
     else: # user loses
         return "You lose!"
+    return random.randint(ROCK, SCISSORS)
 
 def play_game(): # playing the actual game
     global user_score, bot_score

@@ -19,47 +19,35 @@
 # you might need: or, and, (not, xor, xand), if-then-elseif-else-endif, select case
 #######################################################
 
-#variables to count
+#asks for string
+String = input('Enter a string: ')
+
+# count the spaces, vowels, consonants, numbers, and other characters in the string
 vowel_count = 0
 consonants_count = 0
 space_count = 0
 numbers_count = 0
+other_characters_count = 0
 
-# get user input for a string
-String = input("Enter a string: ")
-
-# turn the string to uppercase and lowercase
-String_upper = String.upper() # formats the string
+#turns the string upper and lowercase
+String_upper = String.upper()
 String_lower = String.lower()
 
-# count the spaces in the string
-for i in range(len(String)):
-    if String[i] == ' ':
-        space_count += 1
-
-# count the vowels in the string
 vowels = ['a', 'e', 'i', 'o', 'u']
-
-for i in range(len(String)):
-    if String_lower[i] in vowels:
-        vowel_count += 1
-
-# count the consonants in the string
 consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
-
-for i in range(len(String)):
-    if String_lower[i] in consonants:
-        consonants_count += 1
-
-# count the numbers in the string
 numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
-for i in range(len(String)):
-    if String[i] in numbers:
+for char in String: # adds the appropriate amount of characters for each variable
+    if char == ' ':
+        space_count += 1
+    elif char.lower() in vowels:
+        vowel_count += 1
+    elif char.lower() in consonants:
+        consonants_count += 1
+    elif char in numbers:
         numbers_count += 1
-
-# count the other characters in the string
-other_characters_count = len(String) - (vowel_count + consonants_count + space_count + numbers_count)
+    else:
+        other_characters_count += 1
 
 # print the string in all formats
 print(f"String forwards: {String}\n"

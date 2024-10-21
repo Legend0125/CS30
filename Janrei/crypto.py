@@ -155,3 +155,35 @@ data = fetch_crypto_data_from_db(symbol)
 historical_prices = fetch_historical_price_data_from_db(symbol)
 
 df = pd.DataFrame(historical_prices, columns=['timestamp', 'price'])
+
+# Plot historical price data
+
+df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
+df.set_index('timestamp', inplace=True)
+df.plot()
+plt.show()
+
+# Fetch and display current price data
+
+current_price = fetch_crypto_data(symbol)['bitcoin']['usd']
+print(f'Current price of {symbol}: ${current_price}')
+
+# Fetch and display 24-hour price change
+
+price_change_24h = fetch_crypto_data(symbol)['bitcoin']['usd_24h_change']
+print(f'24-hour price change: {price_change_24h}%')
+
+# Fetch and display market cap
+
+market_cap = fetch_crypto_data(symbol)['bitcoin']['market_cap_usd']
+print(f'Market cap: ${market_cap}')
+
+# Fetch and display 24-hour volume
+
+volume_24h = fetch_crypto_data(symbol)['bitcoin']['total_volume_usd']
+print(f'24-hour volume: ${volume_24h}')
+
+# Fetch and display development status
+
+development_status = fetch_crypto_data(symbol)['bitcoin']['development_status']
+print(f'Development status: {development_status}')
